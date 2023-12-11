@@ -1,0 +1,53 @@
+﻿@model Contact
+
+<h1>Dodaj nowy kontakt</h1>
+
+<form asp-controller="Contact" asp-action="Create" method="post">
+    <div class="form-grup">
+        <label asp-for="Name"></label>
+        <div >
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <input class="form-control" asp-for="Name" />
+    </div>
+    <div class="form-grup">
+        <label asp-for="Email"></label>
+        <div>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <input class="form-control" asp-for="Email" />
+    </div>
+    <div class="form-grup">
+        <label asp-for="Phone"></label>
+        <div>
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <select class="form-control" asp-for="OrganizationId" asp-items="@Model.Organizations"></select>
+    </div>
+    <div class="form-group">
+        <button type="submit">Zapisz</button>
+    </div>
+
+</form>
+
+@*<form asp-action="ContactForm" asp-controller="Contact" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Name"></label>
+        <div>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <input class="form-control" type="text" asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="Priority"></label>
+        <div>
+            <span asp-validation-for="Priority" class="text-danger"></span>
+        </div>
+        <select class="form-control" asp-for="Priority"></select>
+    </div>
+
+    <button type="submit">Zapisz</button>
+</form>*@
